@@ -1,12 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=/🫶️">
-    <link rel="canonical" href="https://cooperwood.land/🫶️">
-    <title>Redirecting...</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cooper Woodland</title>
+  <style>
+    /* Global Typography & Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Special Elite", monospace;
+      background-color: #ffffff;
+      color: #000000;
+      line-height: 1.6;
+      font-size: 1.2rem;
+    }
+
+    /* Base Content Layer */
+    .content-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 10vh 2rem 50vh 2rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      font-weight: normal;
+      letter-spacing: -1px;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    .demo-image {
+      width: 100%;
+      height: auto;
+      margin: 2rem 0;
+      display: block;
+      border: 2px solid #000000;
+    }
+
+    .inversion-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      
+      backdrop-filter: invert(100%);
+      -webkit-backdrop-filter: invert(100%);
+
+      clip-path: polygon(0 60vh, 100% 42vh, 100% 100%, 0 100%);
+    }
+  </style>
 </head>
 <body>
-    <p>Redirecting to <a href="/🫶️">cooperwood.land/🫶️</a>...</p>
+
+  <!-- Scrollable Base Content -->
+  <main class="content-container">
+    <h1>hellooo there!!</h1>
+    
+    <p>
+      I'm Cooper!! It's nice to meet you! (Or maybe I've already met you...but whoever you are, thanks for coming here!
+    </p>
+    
+    <p>
+      Welcome to my personal website!! There's not a whole lot to see here yet, but over the next few months I want to add a lot more to this space. Maybe a photo gallery or maybe various pages to overshare facts about my assorted eclectic interests.
+    </p>
+    
+    <p>
+      I made this site mainly because I wanted to have a space on the internet that <i>I own</i> so that I can share stuff without needing to rely on a corporate-owned third-party platform like Instagram or X.
+    </p>
+
+    <p>
+      I will probably be pretty busy for a little while, so I don't know how much I can really get done on this site, but check in again in a little while!
+    </p>
+
+    <p>
+      Thanks again for stopping in. :)
+    </p>
+  </main>
+
+  <!-- Fixed Inversion Layer -->
+  <div class="inversion-overlay"></div>
+
 </body>
 </html>
