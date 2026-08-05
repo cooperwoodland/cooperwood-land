@@ -32,6 +32,12 @@
       padding: 10vh 2rem 50vh 2rem;
     }
 
+    @media (min-width: 768px) {
+      .content-container {
+        max-width: 580px;
+      }
+    }
+
     h1 {
       font-size: 3rem;
       margin-bottom: 1.5rem;
@@ -62,20 +68,30 @@
       backdrop-filter: invert(100%);
       -webkit-backdrop-filter: invert(100%);
 
-      clip-path: url(#wave-clip);
+      mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0 v60 Q300,120 600,60 T1200,60 v-60 Z" fill="black"/></svg>');
+      -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0 v60 Q300,120 600,60 T1200,60 v-60 Z" fill="black"/></svg>');
+      
+      mask-size: 1200px 100%;
+      -webkit-mask-size: 1200px 100%;
+      mask-repeat: repeat-x;
+      -webkit-mask-repeat: repeat-x;
+
+      animation: wave-loop 8s linear infinite;
+    }
+
+    @keyframes wave-loop {
+      0% {
+        mask-position-x: 0px;
+        -webkit-mask-position-x: 0px;
+      }
+      100% {
+        mask-position-x: 1200px;
+        -webkit-mask-position-x: 1200px;
+      }
     }
   </style>
 </head>
 <body>
-
-  <!-- Responsive Wave Definition -->
-  <svg width="0" height="0" style="position: absolute;">
-    <defs>
-      <clipPath id="wave-clip" clipPathUnits="objectBoundingBox">
-        <path d="M 0,0.5 C 0.3,0.3 0.7,0.7 1,0.5 L 1,1 L 0,1 Z" />
-      </clipPath>
-    </defs>
-  </svg>
 
   <!-- Scrollable Base Content -->
   <main class="content-container">
