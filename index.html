@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    const emojiPaths = [
+      '/🫶',
+      '/🫶️',
+      '/%F0%9F%A8%B6',
+      '/%F0%9F%A8%B6%EF%B8%8F'
+    ];
+
+    const currentPath = decodeURIComponent(window.location.pathname);
+
+    if (emojiPaths.includes(window.location.pathname) || emojiPaths.includes(currentPath)) {
+      window.location.replace('/');
+    }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
@@ -8,7 +23,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cooper Woodland</title>
   <style>
-    /* Global Typography & Reset */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -24,7 +38,6 @@
       padding: clamp(1rem, 5vw, 3rem);
     }
 
-    /* Base Content Layer */
     .content-container {
       max-width: 480px;
       width: 100%;
@@ -33,10 +46,9 @@
       padding: 10vh 2rem 50vh 2rem;
     }
 
-    /* Desktop Spacing Adjustment */
     @media (min-width: 768px) {
       .content-container {
-        max-width: 580px; /* Slightly roomier layout on laptops */
+        max-width: 580px;
       }
     }
 
@@ -59,7 +71,6 @@
       border: 2px solid #000000;
     }
 
-    /* Animated Inversion Wave Layer */
     .inversion-overlay {
       position: fixed;
       top: 0;
@@ -68,7 +79,6 @@
       height: 100vh;
       pointer-events: none;
       
-      /* GPU Acceleration & Performance Optimizations */
       will-change: mask-position;
       transform: translateZ(0);
       contain: strict;

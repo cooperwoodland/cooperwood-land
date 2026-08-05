@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Cooper Woodland</title>
+  <script>
+    const emojiPaths = [
+      '/🫶',
+      '/🫶️',
+      '/%F0%9F%A8%B6',
+      '/%F0%9F%A8%B6%EF%B8%8F'
+    ];
+
+    const currentPath = decodeURIComponent(window.location.pathname);
+
+    if (emojiPaths.includes(window.location.pathname) || emojiPaths.includes(currentPath)) {
+      window.location.replace('/');
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Special Elite", monospace;
+      background-color: #ffffff;
+      color: #000000;
+      line-height: 1.6;
+      font-size: 1.2rem;
+      padding: clamp(1rem, 5vw, 3rem);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 480px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: normal;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    a {
+      color: #000000;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    a:hover {
+      background-color: #000000;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>404</h1>
+    <p>Sorry friend! This page doesn't exist...yet. >:D'</p>
+    <p><a href="/">Head back home!</a></p>
+  </div>
+
+</body>
+</html>
