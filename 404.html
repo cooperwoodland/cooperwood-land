@@ -9,13 +9,37 @@
       '/🫶',
       '/🫶️',
       '/%F0%9F%A8%B6',
-      '/%F0%9F%A8%B6%EF%B8%8F'
+      '/%F0%9F%A8%B6%EF%B8%8F',
+      '/%F0%9F%AB%B6',
+      '/%F0%9F%AB%B6%EF%B8%8F'
     ];
 
-    const currentPath = decodeURIComponent(window.location.pathname);
+    const redirects = {
+      '/🫶': '/',
+      '/🫶️': '/',
+      '/linkedin': 'https://linkedin.com/in/cooper-fortner-woodland/',
+      '/insta': 'https://instagram.com/cooper.woodland/',
+      '/📷': 'https://instagram.com/cooper.woodland/',
+      '/📷️': 'https://instagram.com/cooper.woodland/',
+      '/%f0%9f%93%b7': 'https://instagram.com/cooper.woodland/',
+      '/%f0%9f%93%b7%ef%b8%8f': 'https://instagram.com/cooper.woodland/',
+      '/bsky': 'https://bsky.app/profile/cooperwood.land',
+      '/🦋': 'https://bsky.app/profile/cooperwood.land',
+      '/🦋️': 'https://bsky.app/profile/cooperwood.land',
+      '/%f0%9f%a6%8b': 'https://bsky.app/profile/cooperwood.land',
+      '/%f0%9f%a6%8b%ef%b8%8f': 'https://bsky.app/profile/cooperwood.land'
+    };
 
-    if (emojiPaths.includes(window.location.pathname) || emojiPaths.includes(currentPath)) {
+    const rawPath = window.location.pathname.replace(/\/+$/, '');
+    const currentPath = decodeURIComponent(rawPath);
+    const normalizedPath = currentPath.replace(/[\uFE0E\uFE0F]/g, '').toLowerCase();
+
+    if (emojiPaths.includes(rawPath) || emojiPaths.includes(currentPath)) {
       window.location.replace('/');
+    } else if (redirects[normalizedPath] || redirects[currentPath] || redirects[rawPath.toLowerCase()]) {
+      window.location.replace(
+        redirects[normalizedPath] || redirects[currentPath] || redirects[rawPath.toLowerCase()]
+      );
     }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
